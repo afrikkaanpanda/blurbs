@@ -3,4 +3,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root to: "homes#index"
+  get "signup", to: "registrations#new"
+  post "sign-up", to: "registrations#create"
+
+  resources :users, only: [:show, :edit, :update]
+
 end
