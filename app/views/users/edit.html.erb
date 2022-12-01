@@ -1,26 +1,43 @@
-<h1> Editing <%= @user.full_name %>'s Profile
+<h1> Editing <%= @user.full_name %>'s Profile</h1>
 
-<%= form_with model: @user, url: user_path(@user) do |form| %>
+<%= form_with model: @user, url: user_path(@user), local: true do |form| %>
+  <% if @user.errors.any? %>
+    <div class= "alert alert-danger">
+      <% @user.errors.full_messages.each do |message| %>
+        <ul class="small">
+          <li><%= message %></li>
+        </ul>
+      <% end %>
+    </div>
+  <% end %>
 
-  <div>
+  <div class= "mb-4">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar, class: "form-control" %>
+  </div>
+
+  <div class= "mb-4">
     <%= form.label :first_name %>
     <%= form.text_field :first_name, class: "form-control" %>
   </div>
 
-  <div>
+  <div class= "mb-4">
     <%= form.label :last_name %>
     <%= form.text_field :last_name, class: "form-control" %>
   </div>
 
-  <div>
+  <div class= "mb-4">
     <%= form.label :birthday %>
     <%= form.date_field :birthday, class: "form-control" %>
   </div>
 
-  <div>
+  <div class= "mb-4">
     <%= form.label :bio %>
     <%= form.text_area :bio, class: "form-control" %>
   </div>
 
-  <%= form.submit "Edit User" %>
+  <div class= "mt-4">
+    <%= form.submit "Edit User", class: "btn btn-secondary" %>
+  </div>
+
 <% end %>

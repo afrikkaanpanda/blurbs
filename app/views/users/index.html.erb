@@ -1,0 +1,24 @@
+<% provide(:title, "All Users | ")%>
+<h1> All Users </h1>
+
+<%= will_paginate %>
+
+  <% @users.each do |user| %>
+    <div class= "card mt-2 ml-4">
+      <div class= "card-image">
+        <% if user.avatar.attached? %>
+          <%= image_tag(user.avatar.variant(resize_to_fill: [500, 500],
+                                         crop: [0, 0, 500, 500]).processed,
+                                         class: "mt-2 card-img-top center rounded-circle avatar") %>
+          <% else %>
+          <%= image_tag("avatar.place.holder", width: "500", class: "rounded-circle avatar")%>
+        <% end %>
+      </div>
+    
+      <div class= "card-body">
+        <b class= "mt-4 card-title"><%= link_to user.full_name, user_path(user)%> </b>
+      </div>
+    </div>
+  <% end %>
+
+<%= will_paginate %>
