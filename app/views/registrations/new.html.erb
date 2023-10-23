@@ -12,48 +12,48 @@
     </div>
   <% end %>
 
-  <div>
+  <div class= "form-floating mb-3">
+    <%= form.text_field :first_name, placeholder: "eg: Jane", class: "form-control" %>
     <%= form.label :first_name %>
-    <%= form.text_field :first_name, class: "form-control" %>
   </div>
 
-  <div>
+  <div class= "form-floating mb-3">
+    <%= form.text_field :last_name, placeholder: "eg: Doe", class: "form-control" %>
     <%= form.label :last_name %>
-    <%= form.text_field :last_name, class: "form-control" %>
   </div>
 
-  <div>
+  <div class= "form-floating mb-3">
+    <%= form.email_field :email, placeholder: "eg: email@example.com", class: "form-control" %>
     <%= form.label :email %>
-    <%= form.email_field :email, class: "form-control" %>
   </div>
 
-  <div>
+  <div class= "form-floating mb-3">
+    <%= form.text_field :username, placeholder: "eg: epicpandalord", class: "form-control" %>
     <%= form.label :username %>
-    <%= form.text_field :username, class: "form-control" %>
   <div>
 
-  <div>
+  <div class= "form-floating mb-3">
+    <%= form.date_field :birthday, placeholder: "eg: 12/31/2000", class: "form-control" %>
     <%= form.label :birthday %>
-    <%= form.date_field :birthday, class: "form-control" %>
   <div>
 
-  <div>
+  <div class= "form-floating mb-3">
+    <%= form.text_area :bio, placeholder: "eg: This is a bio", class: "form-control" %>
     <%= form.label :bio %>
-    <%= form.text_area :bio, class: "form-control" %>
   </div>
 
-  <div>
+  <div class= "form-floating mb-3">
+    <%= form.password_field :password, placeholder: "eg: Password", class: "form-control" %>
     <%= form.label :password %>
-    <%= form.password_field :password, class: "form-control" %>
   </div>
 
-  <div>
+  <div class= "form-floating mb-3">
+    <%= form.password_field :password_confirmation, placeholder: "eg: Password", class: "form-control" %>
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, class: "form-control" %>
   </div>
 
   <div class= "mt-4">
-    <%= form.submit "Create User", class: "btn btn-secondary" %>
+    <%= form.submit "Create User", class: "btn btn-secondary w-100" %>
   </div>
 
 <% end %>
